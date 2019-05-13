@@ -73,7 +73,8 @@ class ProductsController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'dropdownData' => $model->getAllCategoriesAsArray()
+            'dropdownData' => $model->getAllCategoriesAsArray(),
+            'statusList' => $model->getStatusList()
         ]);
     }
 
@@ -94,6 +95,8 @@ class ProductsController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'dropdownData' => $model->getAllCategoriesAsArray(),
+            'statusList' => $model->getStatusList()
         ]);
     }
 
@@ -106,7 +109,8 @@ class ProductsController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+//        $this->findModel($id)->delete();
+        $this->findModel($id)->update();
 
         return $this->redirect(['index']);
     }

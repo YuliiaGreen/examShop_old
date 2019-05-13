@@ -5,4 +5,9 @@ return [
     'senderEmail' => 'noreply@example.com',
     'senderName' => 'Example.com mailer',
     'user.passwordResetTokenExpire' => 3600,
+    'user.sex' => [
+        'male' => 'male',
+        'female' => 'female',
+        'underfined' => 'underfined',
+    ]
 ];
