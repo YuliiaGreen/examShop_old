@@ -28,7 +28,8 @@ class m130524_201442_init extends Migration
 //            'city'=>$this->text(),
 //
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
+//            'created_at' => $this->integer()->notNull(),
+            'created_at' => $this->bigInteger()->defaultValue(time()),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
     }

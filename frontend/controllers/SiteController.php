@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\User;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -254,6 +255,14 @@ class SiteController extends Controller
         }
 
         return $this->render('resendVerificationEmail', [
+            'model' => $model
+        ]);
+    }
+
+    public function actionPersonalData()
+    {
+        $model = new User();
+        return $this->render('personalData', [
             'model' => $model
         ]);
     }

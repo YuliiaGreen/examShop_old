@@ -22,6 +22,7 @@ class m190512_131129_create_categories_table extends Migration
             'created_at' =>$this->bigInteger()->defaultValue(time()),
             'updated_at' =>$this->bigInteger(),
             'deleted_at' =>$this->bigInteger(),
+            'seo' => $this->bigInteger(),
         ]);
     }
 
