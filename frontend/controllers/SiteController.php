@@ -15,6 +15,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use app\models\Products;
 
 /**
  * Site controller
@@ -75,7 +76,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $products = Products::find()->where(['is', 'deleted_at', null])
+            ->andWhere(['=', 'status', '1'])->all();
+
+        return $this->render('index', [
+            'products' => $products,
+        ]);
     }
 
     /**
